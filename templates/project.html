@@ -3,13 +3,21 @@
   <head>
     <style>
        #map {
-        height: 400px;
+        height: 600px;
         width: 100%;
        }
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>Twitter Mapper</h3>
+    <div id="contact-form">
+<form method="post" action="/signup">
+<label for="search">Search Term</label>
+<input type="search" id="search" name="search" required="required">
+<input type="submit" value="Submit" id="submit-button">
+
+</form>
+</div>
     <div id="map"></div>
     <script src=../static/js/map.js></script>
     <script async defer

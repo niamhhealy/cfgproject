@@ -1,16 +1,46 @@
+data = [
+  {
+    "lat": -25.363,
+    "lng": 131.044 ,
+    "html": "Hello" 
+  },
+  {
+    "lat": -31.950527,
+    "lng": 115.860457,
+    "html": "Hello2" 
+  },
+   {
+    "lat": -29.950527,
+    "lng": 115.860457,
+    "html": "Hello3" 
+  }
+]
+
+
+
 function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var Perth = {lat: -31.950527, lng: 115.860457}
+
+        var center= {lat: data[0].lat, lng: data[0].lng};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
-          center: uluru
+          center: center
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
+
+        var infowindow = null;
+        var infowindow = new google.maps.InfoWindow({
+          content: "holding"});
+        
+        for (i = 0; i < 3; i++) {
+          var marker = new google.maps.Marker({
+          position: {lat: data[i].lat, lng: data[i].lng},
+          map: map,
+          html: data[i].html
         });
-        var marker = new google.maps.Marker({
-          position: Perth,
-          map: map
-        });
+
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent( this.html
+            );
+            infowindow.open(map, this);
+          });   
+        };
       }

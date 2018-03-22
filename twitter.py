@@ -1,10 +1,11 @@
-def tweet_finder(lat, long, radius):
+# -*- coding: utf-8 -*-
+
+def tweet_finder(hashtag):
 
     '''
-    This function takes the coordinates of a location and a radius, and returns the five most recent
-    tweets from within that radius of the location with the username of the tweeter.
+
     '''
-    
+
     # Import tweepy library
     import tweepy
 
@@ -16,9 +17,10 @@ def tweet_finder(lat, long, radius):
     twitter_api = tweepy.API(auth)
 
     # Search twitter
-    tweets = twitter_api.search  (geocode = '{},{},{}'.format(lat,long,radius))
+    tweets = twitter_api.search  (q = "#{}".format(hashtag), geocode = "51.5,-0.1,35km")
 
     for tweet in tweets:
-        print tweet.user.name.encode("utf-8") + ": " + tweet.text.encode("utf-8")
+        print tweet.place
 
-tweet_finder(51.5,-0.15,'15km')
+hashtag = raw_input()
+tweet_finder(hashtag)

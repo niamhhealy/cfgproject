@@ -7,7 +7,7 @@ function initMap() {
         var center= {lat: 51.5, lng: -0.1};
         //use google API to load the map - links to the HTML div using 'map'
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
+          zoom: 10,
           center: center
         });
 

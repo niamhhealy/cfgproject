@@ -11,6 +11,8 @@ app = Flask("MyApp")
 def access():
     return render_template("submit.html")
 
+
+
 #Example data
 data = [
   {
@@ -31,7 +33,7 @@ data = [
 ]
 
 #Function to extract location of tweets
-def tweet_finder():
+def tweet_finder(search):
     # Set auth
     auth = tweepy.OAuthHandler("NhwEslehY264mPa0owS6i4BZU","zzuVEQsOSOovoHXZ965Me4HKlt0VMiH87ruztaTo71cPH9VIYK")
     auth.set_access_token("2282751926-Avzs0JEIg0WIePxJO7y0meUYlQj2gR8uMfrnF6q","ePKPPikAAChk6W5dNnQPLTUOcOxNBzGHknI9DpO9aQXig")
@@ -40,7 +42,7 @@ def tweet_finder():
     twitter_api = tweepy.API(auth)
 
     # Search twitter
-    tweets = twitter_api.search  (q = "#{}".format("coffee"),rpp=3, count=200, geocode = "51.5,-0.1,60km")
+    tweets = twitter_api.search  (q = "#{}".format(search),rpp=3, count=200, geocode = "51.5,-0.1,60km")
     
     #Pull off the location and tweet text for tweets that have a location listed
     d = list()
@@ -63,8 +65,10 @@ def tweet_finder():
 
 
 
-@app.route("/map")
+@app.route("/map", methods=["POST"])
 def hello():
-  return render_template("project.html", test=tweet_finder())
+  form_data = request.form
+  search =form_data["text"]
+  return render_template("project.html", test=tweet_finder(search))
 
 app.run(debug=True)

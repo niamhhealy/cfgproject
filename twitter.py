@@ -20,7 +20,7 @@ def tweet_finder(hashtag):
     tweets = twitter_api.search  (q = "#{}".format(hashtag), geocode = "51.5,-0.1,35km")
 
     for tweet in tweets:
-        print tweet.place
+        print (tweet.place)
 
 hashtag = raw_input()
 tweet_finder(hashtag)

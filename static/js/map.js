@@ -4,10 +4,10 @@ data = test
 
 function initMap() {
         //define the center of tha map
-        var center= {lat: data[0].lat, lng: data[0].lng};
+        var center= {lat: 51.5, lng: -0.1};
         //use google API to load the map - links to the HTML div using 'map'
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 6,
+          zoom: 8,
           center: center
         });
 
@@ -24,6 +24,7 @@ function initMap() {
         
         //creates the markers for locations in the loaded data
         for (i = 0; i < 3; i++) {
+          console.log(data[i])
           var marker = new google.maps.Marker({
           position: {lat: data[i].lat, lng: data[i].lng},
           map: map,

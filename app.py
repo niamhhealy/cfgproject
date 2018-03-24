@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template, request
 import requests
 import twitter as twitter
+import tweepy
 
 app = Flask("MyApp")
 
@@ -27,8 +30,41 @@ data = [
   }
 ]
 
-@app.route("/map",methods=["POST"])
+#Function to extract location of tweets
+def tweet_finder():
+    # Set auth
+    auth = tweepy.OAuthHandler("NhwEslehY264mPa0owS6i4BZU","zzuVEQsOSOovoHXZ965Me4HKlt0VMiH87ruztaTo71cPH9VIYK")
+    auth.set_access_token("2282751926-Avzs0JEIg0WIePxJO7y0meUYlQj2gR8uMfrnF6q","ePKPPikAAChk6W5dNnQPLTUOcOxNBzGHknI9DpO9aQXig")
+
+    # Set twitter API
+    twitter_api = tweepy.API(auth)
+
+    # Search twitter
+    tweets = twitter_api.search  (q = "#{}".format("coffee"),rpp=3, count=200, geocode = "51.5,-0.1,60km")
+    
+    #Pull off the location and tweet text for tweets that have a location listed
+    d = list()
+    t = list()
+    for tweet in tweets:
+      if tweet.place!= None:
+        d.append(tweet.place.bounding_box.coordinates[0][0])
+        t.append(tweet.text)
+
+    #Modify the data so it is in the right format to be used in the google maps api
+    my_list=list()
+    for x in range(0, len(d)):
+      my_dict={}
+      my_dict["lng"]=d[x][0]
+      my_dict["lat"]=d[x][1]
+      my_dict["html"]=t[x]
+      my_list.append(my_dict)
+
+    return(my_list)
+
+
+
+@app.route("/map")
 def hello():
-  return render_template("project.html", test=data)
+  return render_template("project.html", test=tweet_finder())
 
 app.run(debug=True)

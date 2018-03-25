@@ -64,13 +64,19 @@ nav a {
    background: transparent;
    border-color: transparent;
    font-size:30px;
+   color: Black;
     }
-  p {
+  /*p {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size:30px;
     text-align: center;
-}
+}/*
 
-.container-fluid {
+/*.container-fluid {
   width:auto;
-}
+}*/
+
+
+/*.container {
+  background:#0084b4;
+}*/

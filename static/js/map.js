@@ -21,9 +21,9 @@ function initMap() {
         var infowindow = null;
         var infowindow = new google.maps.InfoWindow({
           content: "holding"});
-        
+
         //creates the markers for locations in the loaded data
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < data.length; i++) {
           console.log(data[i])
           var marker = new google.maps.Marker({
           position: {lat: data[i].lat, lng: data[i].lng},
@@ -37,6 +37,6 @@ function initMap() {
             infowindow.setContent( this.html
             );
             infowindow.open(map, this);
-          });   
+          });
         };
       }

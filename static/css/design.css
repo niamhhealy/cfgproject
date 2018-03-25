@@ -32,7 +32,7 @@ h3 {
 
 .searchbar input#submit-button{
   width: 204px;
-  height: 52px;
+  height: 50px;
   background: #0084b4;
   border: none;
   font-size: 10pt;
@@ -68,9 +68,9 @@ nav a {
   p {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size:30px;
-    text-align: center;  
+    text-align: center;
 }
 
 .container-fluid {
-  width:auto;   
+  width:auto;
 }

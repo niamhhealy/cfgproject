@@ -7,7 +7,7 @@ import tweepy
 
 app = Flask("MyApp")
 
-@app.route("/home")
+@app.route("/")
 def access():
     return render_template("submit.html")
 
@@ -42,8 +42,8 @@ def tweet_finder(search):
     twitter_api = tweepy.API(auth)
 
     # Search twitter
-    tweets = twitter_api.search  (q = "#{}".format(search),rpp=3, count=200, geocode = "51.5,-0.1,60km")
-    
+    tweets = twitter_api.search  (q = "#{}".format(search),rpp=100, count=200, geocode = "51.5,-0.1,60km")
+
     #Pull off the location and tweet text for tweets that have a location listed
     d = list()
     t = list()

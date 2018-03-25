@@ -4,9 +4,11 @@
        }
 
 h3 {
+  font-family: 'Lobster', cursive;
 	color: blue;
 	font-size : 30px;
 }
+
 
 .background {
     position: fixed;
@@ -14,7 +16,7 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: black;
+    background-color: #1dcaff;
     background-size: cover;
     background-position: 50%;
     transition: height .4s, opacity .4s;

@@ -22,3 +22,39 @@ h3 {
     transition: height .4s, opacity .4s;
     z-index: -1;
 }
+
+.searchbar {
+  margin: 100px auto;
+  width: 1000px;
+  height: 52px;
+/*  border: 1px solid grey;*/
+  float: center;
+}
+
+.searchbar input#submit-button{
+  width: 204px;
+  height: 52px;
+  background: #0084b4;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: Black;
+  padding-left: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+.searchbar input#text{
+  width: 750px;
+  height: 50px;
+  background: #c0deed;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}

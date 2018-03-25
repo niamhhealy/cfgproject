@@ -4,19 +4,18 @@
        }
 
 h3 {
-  font-family: 'Lobster', cursive;
-	color: blue;
-	font-size : 30px;
+  font-family: 'Spicy Rice', cursive;
+  color: blue;
+  font-size : 30px;
 }
 
 
 .background {
     position: fixed;
-    height: 50%;
+    height: 100%;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1dcaff;
     background-size: cover;
     background-position: 50%;
     transition: height .4s, opacity .4s;
@@ -57,4 +56,21 @@ h3 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+nav a {
+   font-family: 'McLaren', cursive;
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   font-size:30px;
+    }
+  p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:30px;
+    text-align: center;  
+}
+
+.container-fluid {
+  width:auto;   
 }

@@ -77,10 +77,19 @@ nav a {
    font-size:30px;
    color: Black;
     }
+nav a.navbar-brand.page-scroll.page-top-font {
+   font-family: 'McLaren', cursive;
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   font-size:30px;
+   color: lightblue;
+    }
   /*p {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size:30px;
     text-align: center;
+}
 }/*
 
 /*.container-fluid {

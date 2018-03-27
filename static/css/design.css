@@ -8,7 +8,7 @@ h3 {
   color: blue;
   font-size : 30px;
 }
-footer { 
+footer {
        position: fixed;
     left: 0;
     bottom: 0;
@@ -75,7 +75,7 @@ nav a {
    background: transparent;
    border-color: transparent;
    font-size:30px;
-   color: Black;
+   color: #c0deed;
     }
 nav a.navbar-brand.page-scroll.page-top-font {
    font-family: 'McLaren', cursive;
@@ -83,7 +83,7 @@ nav a.navbar-brand.page-scroll.page-top-font {
    background: transparent;
    border-color: transparent;
    font-size:30px;
-   color: lightblue;
+   color: #c0deed;
     }
   /*p {
     font-family: 'Open Sans Condensed', sans-serif;

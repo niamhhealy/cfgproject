@@ -7,11 +7,13 @@ import tweepy
 
 app = Flask("MyApp")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/")
 def access():
     return render_template("submit.html")
-
-
 
 #Example data
 data = [

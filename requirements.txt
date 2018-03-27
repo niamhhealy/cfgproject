@@ -3,5 +3,3 @@ gunicorn
 requests
 request
 tweepy
-twitter
-python-twitter

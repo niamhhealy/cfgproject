@@ -2,10 +2,10 @@
 
 from flask import Flask, render_template, request
 import requests
-# -*-import twitter  -*-
+
 import tweepy
 
-app = Flask("MyApp")
+app = Flask(__name__)
 
 @app.route("/about")
 def about():
@@ -73,4 +73,5 @@ def hello():
   search =form_data["text"]
   return render_template("project.html", test=tweet_finder(search))
 
-app.run(debug=True)
+if __name__ == '__main__':
+   app.run(debug=True)
